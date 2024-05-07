@@ -90,9 +90,7 @@
           }
         }
       }
-    }
-
-    
+    }    
   },
   "cli": {
     "analytics": false
