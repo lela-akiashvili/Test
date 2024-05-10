@@ -1,38 +1,31 @@
-import { Component, Input } from '@angular/core';
+import { Component } from '@angular/core';
 import { ColorChangeComponent } from '../color-change/color-change.component';
-function randomClr() {
-  const randomNum = () => Math.round(Math.random() * 256);
-  const bgClr = `rgb(${randomNum()},${randomNum()},${randomNum()} )`;
-  return bgClr;
-}
+import { TextComponent } from '../text/text.component';
+import { ImgsComponent } from '../imgs/imgs.component';
 
 @Component({
   selector: 'app-main',
   standalone: true,
-  imports: [ColorChangeComponent],
+  imports: [TextComponent, ColorChangeComponent, ImgsComponent],
   templateUrl: './main.component.html',
   styles: `
-  div{min-height:60vh;
+  main{
+    padding:0 2rem;
+    min-height:65vh;
+  }
+  div{
+    padding:1rem 0;
+   
     text-align:center;
   }
-  button{
-    border:none;
-    padding:5px 15px;
-    border-radius:15px;
-    margin-bottom:1rem;
-  }
-/*h1{
-  display:hidden;
-}*/
-`,
+  section{
+     min-height:20vh;
+  }`,
 })
 export class MainComponent {
-  clicked: boolean = false;
-  display: boolean = true;
-  bgClr: string = '';
-  show() {
-    this.clicked = !this.clicked;
-    this.display = !this.display;
-    this.bgClr = randomClr();
+  backgroundColor: string = '';
+
+  changeBackgroundColor(color: string) {
+    this.backgroundColor = color;
   }
 }

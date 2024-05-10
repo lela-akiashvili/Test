@@ -1,7 +1,11 @@
-<div>
-  <button (click)="show()" [style.backgroundColor]="bgClr">text</button>
-  <h1 [hidden]="display">some text</h1>
-  <br />
-  <app-color-change></app-color-change>
-</div>
-
+<main [style.background]="backgroundColor">
+  <div>
+    <app-text></app-text>
+    <app-color-change
+      (bgclr)="changeBackgroundColor($event)"
+    ></app-color-change>
+  </div>
+  <section>
+    <app-imgs></app-imgs>
+  </section>
+</main>

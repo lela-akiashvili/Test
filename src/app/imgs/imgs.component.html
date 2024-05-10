@@ -1,0 +1,12 @@
+<div>
+  @for (img of list; track img.src) {
+  <img [src]="img.src" [alt]="img.alt" />
+  } @empty {
+  <p>No images to display.</p>
+  }
+</div>
+
+<div class="input">
+  <input type="file" id="imgs" (change)="onFileChange($event)" />
+  <label for="imgs">add image</label>
+</div>
